@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="game2"
+config/name="RobotCharge"
 run/main_scene="res://GAME2.tscn"
 config/icon="res://icon.png"
 
