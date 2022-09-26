@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/onlymp3.to - World Goes Round-ktU_VLz81D8-192k-1654304763599 [music].mp3-98c9fc0b89c6e20cdcfe85acd3fce98f.mp3str"
+
+[deps]
+
+source_file="res://onlymp3.to - World Goes Round-ktU_VLz81D8-192k-1654304763599 [music].mp3"
+dest_files=[ "res://.import/onlymp3.to - World Goes Round-ktU_VLz81D8-192k-1654304763599 [music].mp3-98c9fc0b89c6e20cdcfe85acd3fce98f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

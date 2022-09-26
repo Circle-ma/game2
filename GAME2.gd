@@ -4,8 +4,8 @@ extends Node2D
 var battery = 0
 var mouseSpeed = 0
 var stop = true
-var goal = 25
-var mouseRequiredSpeed = 800
+var goal = 30000
+var mouseRequiredSpeed = 500
 var email = ""
 var token = ""
 
@@ -24,10 +24,12 @@ func _process(delta):
 	$CanvasLayer/timeleft.text = "剩餘時間: " + str(stepify($Timer.time_left, 0.1))+"秒"
 	if mouseSpeed > mouseRequiredSpeed and stop == false:
 		$background/robot.playing = true
-		battery -= -1 * delta
+		battery +=  delta * mouseSpeed
 		$CanvasLayer/Sprite/TextureProgress.value = battery
 	else:
 		$background/robot.playing = false
+		
+	mouseSpeed = 0
 		
 	if stop == true:
 		$background/kelefei.playing = false
@@ -48,6 +50,7 @@ func _on_Timer_timeout():
 		$CanvasLayer/Passed.show()
 		$background/robot.animation = "win"
 		$background/kelefei.animation = "win"
+	$CanvasLayer/timeleft.visible = false
 	stop = true
 
 func _on_restart_pressed():
@@ -60,5 +63,5 @@ func _on_Start_pressed():
 	$CanvasLayer/welcome.visible = false 
 
 
-func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+func _on_HTTPRequest_request_completed(_result, _response_code, _headers,body):
 	print(body.get_string_from_utf8())
